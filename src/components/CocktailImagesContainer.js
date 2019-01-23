@@ -4,14 +4,18 @@ import CocktailImages from './CocktailImages';
 
 export default class CocktailImagesContainer extends React.Component {
   state = {
-    images: null
+    drinks: []
   };
 
   updateCocktailDrinks = cocktailDrinks => {
-    const list = cocktailDrinks.map(drink => {
-      return drink.strDrinkThumb;
+    const listDrinks = cocktailDrinks.map(drink => {
+      return {
+        id: drink.idDrink,
+        title: drink.strDrink,
+        image: drink.strDrinkThumb
+      };
     });
-    this.setState({ images: list });
+    this.setState({ drinks: listDrinks });
   };
 
   componentDidMount() {
@@ -25,6 +29,6 @@ export default class CocktailImagesContainer extends React.Component {
   }
 
   render() {
-    return <CocktailImages images={this.state.images} />;
+    return <CocktailImages {...this.state} />;
   }
 }

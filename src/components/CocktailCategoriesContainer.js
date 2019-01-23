@@ -22,8 +22,6 @@ export default class CocktailCategoriesContainer extends React.Component {
   }
 
   render() {
-    return (
-      <CocktailCategories cocktailCategories={this.state.cocktailCategories} />
-    );
+    return <CocktailCategories {...this.state} />;
   }
 }

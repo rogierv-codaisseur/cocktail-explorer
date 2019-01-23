@@ -7,7 +7,7 @@ export default class CocktailCategories extends React.Component {
       <ul>
         {cocktailCategories.map(cocktailCategory => (
           <li key={cocktailCategory}>
-            <Link to={cocktailCategory}>{cocktailCategory}</Link>
+            <Link to={`category/${cocktailCategory}`}>{cocktailCategory}</Link>
           </li>
         ))}
       </ul>
